@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { IHero } from 'src/app/Ihero';
 import { HeroService } from 'src/app/services/hero.service';
 import { Location } from '@angular/common';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-hero-detail',
@@ -30,4 +31,12 @@ export class HeroDetailComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
+
+  save(): void {
+    if(this.hero){
+      this.heroService.updateHero(this.hero).
+      subscribe( ()=> this.goBack());
+    }
+  }
+
 }
