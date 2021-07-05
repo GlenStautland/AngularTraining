@@ -48,6 +48,38 @@ export class HeroService {
     );
   }
 
+  /** POST: add a new hero to the server */
+  addHero(hero: IHero): Observable<IHero> {
+    return this.http.post<IHero>(this.heroesUrl, hero, this.httpOptions).pipe(
+      tap((newHero: IHero) => this.log(`added hero w/ id=${newHero.id}`)),
+      catchError(this.handleError<IHero>('addHero'))
+    );
+  }
+
+  /** DELETE: delete the hero from the server */
+  deleteHero(id: number): Observable<IHero> {
+  const url = `${this.heroesUrl}/${id}`;
+
+  return this.http.delete<IHero>(url, this.httpOptions).pipe(
+    tap(_ => this.log(`deleted hero id=${id}`)),
+    catchError(this.handleError<IHero>('deleteHero'))
+  );
+  }
+
+  /* GET heroes whose name contains search term */
+  searchHeroes(term: string): Observable<IHero[]> {
+  if (!term.trim()) {
+    // if not search term, return empty hero array.
+    return of([]);
+  }
+  return this.http.get<IHero[]>(`${this.heroesUrl}/?name=${term}`).pipe(
+    tap(x => x.length ?
+       this.log(`found heroes matching "${term}"`) :
+       this.log(`no heroes matching "${term}"`)),
+    catchError(this.handleError<IHero[]>('searchHeroes', []))
+  );
+  }
+
   
 
     /**
