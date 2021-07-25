@@ -1,3 +1,13 @@
+.todos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+
+
 .todo.done .content {
     text-decoration: line-through;
 }
+
