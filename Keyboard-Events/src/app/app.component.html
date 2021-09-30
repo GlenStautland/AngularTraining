@@ -1,0 +1,35 @@
+<div>
+  <input type="text" (keydown)="onNameSubmitted($event)"
+   placeholder="Key Down" 
+  >
+</div>
+
+<div>
+  <input type="text" (focus)="onNameSubmitted($event)"
+   placeholder="Focus" 
+  >
+</div>
+
+<div>
+  <input type="text" (blur)="onNameSubmitted($event)"
+   placeholder="Blur" 
+  >
+</div>
+
+<div>
+  <input type="text" (keydown.enter)="getValue($event)"
+   placeholder="Change text" 
+  >
+</div>
+
+<h2>Music Box 1</h2>
+<div tabindex="0" class="music-box" (keyup.arrowup)="toggle()">
+  <h3>{{isPlaying1}}</h3>
+</div>
+
+<h2>Music Box 2</h2>
+<div tabindex="0" class="music-box-2">
+  <h3>{{isPlaying2}}</h3>
+</div>
+
+<h3>{{keyPressed}}</h3>

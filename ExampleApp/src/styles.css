@@ -11,7 +11,7 @@
   body {
     margin: 0;
   }
-  
+  /*
   .container {
     display: flex;
     flex-direction: row;
@@ -24,7 +24,7 @@
   }
   
   /* Text */
-  
+  /*
   h1 {
     font-size: 32px;
   }
@@ -41,7 +41,7 @@
     font-size: 14px;
   }
   
-  /* Hyperlink */
+  /* Hyperlink
   
   a {
     cursor: pointer;
@@ -53,7 +53,7 @@
     opacity: 0.8;
   }
   
-  /* Input */
+  /* Input 
   
   input {
     font-size: 14px;
@@ -71,7 +71,7 @@
     text-transform: uppercase;
   }
   
-  /* Button */
+  /* Button 
   .button, button {
     display: inline-flex;
     align-items: center;
@@ -93,8 +93,8 @@
     opacity: 0.5;
     cursor: auto;
   }
-  
-  /* Fancy Button */
+  */
+  /* Fancy Button 
   
   .fancy-button {
     background-color: white;
@@ -105,8 +105,8 @@
     color: #1976d2;
     padding-right: 4px;
   }
-  
-  /* Top Bar */
+  */
+  /* Top Bar 
   
   app-top-bar {
     width: 100%;
@@ -123,7 +123,7 @@
     color: white;
     margin: 0;
   }
-  
+  */
   /* Checkout Cart, Shipping Prices */
   
   .cart-item, .shipping-item {
@@ -145,3 +145,5 @@
   Use of this source code is governed by an MIT-style license that
   can be found in the LICENSE file at https://angular.io/license
   */
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
